@@ -1,6 +1,5 @@
-# Teaching
- Codes used for class demonstrations, other fun projects
- ERIN WAS HERE
+# Here is my GitHub Page!!! :)
+ This has all the directions for what you should do when you get here
 
 ## MAT 205 (Linear Algebra)
 
