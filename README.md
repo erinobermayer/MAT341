@@ -1,5 +1,6 @@
 # Teaching
  Codes used for class demonstrations, other fun projects
+ ERIN WAS HERE
 
 ## MAT 205 (Linear Algebra)
 
