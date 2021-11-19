@@ -1,7 +1,8 @@
 # Here is my GitHub Page!!! :)
  This has all the directions for what you should do when you get here
 
-## Added
+## Nov 19, 2021 - Added HW1 File
+ Includes all code and pseudocode
 
 ## Added Simulated Annealing code
  The first version
