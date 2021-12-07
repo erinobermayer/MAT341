@@ -1,10 +1,10 @@
 # Here is my GitHub Page!!! :)
  This has all the directions for what you should do when you get here
 
-## Nov 19, 2021 - Added HW1 File
+### Nov 19, 2021 - Added HW1 File
  Includes all code and pseudocode
 
-## Nov 19 2021 - Added Simulated Annealing File
+### Nov 19 2021 - Added Simulated Annealing File
  Includes v1 of code and matrix.mat file
 
 ## MAT 205 (Linear Algebra)
