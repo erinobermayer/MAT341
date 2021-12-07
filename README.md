@@ -1,6 +1,7 @@
 # Here is my GitHub Page!!! :)
  This page includes all of my code from my Computational Mathematics course (MAT 341). I will soon be uploading my research code!!! 
  
+ %
  
  Here is a record of my uploads:
 
