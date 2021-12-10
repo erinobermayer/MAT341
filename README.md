@@ -11,5 +11,5 @@
 #### Nov 19 2021 - Added Simulated Annealing File
  Includes v1 of code and matrix.mat file
  
-#### Dec 6 2021 - Added HW2, HW4, HW5, Classwork, and HBC Files
+#### Dec 6 2021 - Added HW2, HW4, HW5, and HBC Files
  Includes all code and pseudocode
