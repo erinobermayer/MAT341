@@ -16,16 +16,16 @@ load('Cost_and_Distance_Matrix.mat')
     v = randperm(1000);
     %initialize fraction that we will decrease temp after each iteration of
     %steps I and II
-    frac = 0.975;
+    frac = 0.95;
     %initialize tolerance (min temp)
     tol = 1e-3;
     %initialize starting temp
-    temp = 1e3;
+    temp = 1e4;
     %parameter K (Boltzmann-like)
     K = 0.01;
-    Kd = 0.00005;
+    Kd = 0.01;
     %set the maximum number of iterations to run steps I and II
-    max_iter = 10000;
+    max_iter = 5000;
     %find initial cost
     cost = 0;
     dist = 0;
@@ -39,9 +39,9 @@ load('Cost_and_Distance_Matrix.mat')
     ct = 0;
     %weights for how much we care about each (cost and distance)
     goodDelC = 0.001;   %limiting value for accepting good change in cost (when change in dist is bad)
-    badDelD = 99;    %limiting value for accepting bad dist change (when change in cost is good)
-    goodDelD = 99;   %limiting value for accepting good change in dist (when change in cost is bad)
-    badDelC = 0.001;     %limiting value for accepting bad cost change (when change in dist is good)
+    badDelD = 10;    %limiting value for accepting bad dist change (when change in cost is good)
+    goodDelD = 0.001;   %limiting value for accepting good change in dist (when change in cost is bad)
+    badDelC = 10;     %limiting value for accepting bad cost change (when change in dist is good)
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % BEGIN WHILE LOOP FOR STEPS I AND II 
@@ -74,20 +74,26 @@ load('Cost_and_Distance_Matrix.mat')
                 v = v_change;
                 cost = new_cost;
                 dist = new_dist;
+            %this condition accepts change if cost is good enough and
+            %distance isn't too bad
             elseif delC < 0 && abs(delC/cost)*100 > goodDelC && delD/dist*100 < badDelD
                 v = v_change;
                 cost = new_cost;
                 dist = new_dist;
+            %this condition accepts change if distance is good enough and
+            %the cost isn't too bad
             elseif delD < 0 && abs(delD/dist)*100 > goodDelD && delC/cost*100 < badDelC
                 v = v_change;
                 cost = new_cost;
                 dist = new_dist;
-            %elseif rand() < exp(-delC/(K*temp)) keep change (& update
-            %cost)
+            %this condition adds randomness for a situation in which the
+            %change in C is greater than 0 but the change in D is not
             elseif delC > 0 && rand() < exp(-delC/(K*temp))
                 v = v_change;
                 cost = new_cost;
                 dist = new_dist;
+            %this condition adds randomness for a situation in which the change in D
+            %is greater than 0 but the change in C is not
             elseif delD > 0 && rand() < exp(-delD/(Kd*temp))
                 v = v_change;
                 cost = new_cost;
@@ -103,9 +109,15 @@ load('Cost_and_Distance_Matrix.mat')
         temp = frac * temp;
     end
 
+
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % PLOT CT VS COSTVEC 
+    % PLOT  
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     figure(1)
-    plot(1:ct,costVec)
+    semilogx(1:1:ct,costVec,'.-','MarkerSize',30,'LineWidth',5); hold on;
+    semilogx(1:1:ct,distVec,'.-','MarkerSize',30,'LineWidth',5); hold on;
+    xlabel('Number of Rearrangements');
+    ylabel('Cost and Dist');
+    legend('Cost','Distance');
+    set(gca,'FontSize',22);
 end
