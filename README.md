@@ -1,7 +1,7 @@
 # Here is my GitHub Page!!! :)
  This page includes all of my code from my Computational Mathematics course (MAT 341). I will soon be uploading my research code!!! 
  
- 
+ ...
  
  Here is a record of my uploads:
 
@@ -14,5 +14,5 @@
 #### Dec 6 2021 - Added HW2, HW4, HW5, and HBC Files
  Includes all code and pseudocode
  
-#### Dec 10 2021 - Updated HBC Folder
+#### Dec 10 2021 - Added HW6 Files and Updated HBC Folder
  Includes FINAL PROJECT: Simulated_Annealing_Double_Optimization.m
