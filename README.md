@@ -15,4 +15,5 @@
  Includes all code and pseudocode
  
 #### Dec 10 2021 - Added HW6 Files and Updated HBC Folder
- Includes FINAL PROJECT: Simulated_Annealing_Double_Optimization.m
+ HW6 Folder includes all code and pseudocode
+ HBC Folder now includes notes from meetings and FINAL PROJECT: Simulated_Annealing_Double_Optimization.m
