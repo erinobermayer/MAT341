@@ -53,13 +53,16 @@ end
 BetaP
 N
 
+%find the approximate solution
 for i = 1:length(xVec)
-    approx_soln = (BetaP(1) * exp((-(xVec(i)-BetaP(2))^2)/(2*BetaP(3)^2)));
+    approx_soln(i) = (BetaP(1) * exp((-(xVec(i)-BetaP(2))^2)/(2*BetaP(3)^2)));
 end
 
+%plot the data
 figure(1)
-plot(xVec,yVec); hold on; % plot the data
-plot(xVec,approx_soln);
+plot(xVec,yVec,'b.','MarkerSize',20,'LineWidth',6); hold on; % plot the data
+plot(xVec,approx_soln,'r','LineWidth',4);
+legend('Data','Model Fit')
 
 end
 
